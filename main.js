@@ -54,12 +54,12 @@ function kedvencekhezHozzaadas() {
 
     let kedvencek_kiir = document.getElementById("kedvencek_kiir");
     for (let i = 0; i < lista.length; i++) {
-        kedvencek_kiir.innerHTML += "<ul>";
-            kedvencek_kiir.innerHTML += "<li>" + lista[i].getMintaszoveg + "</li>";
-            kedvencek_kiir.innerHTML += "<li>" + lista[i].getBetumeret + "</li>";
-            kedvencek_kiir.innerHTML += "<li>" + lista[i].getSzovegszin + "</li>";
-            kedvencek_kiir.innerHTML += "<li>" + lista[i].getHatterszin + "</li>";
-            kedvencek_kiir.innerHTML += "<button onclick='hasznal(\"" + lista[i].getMintaszoveg + "\", \"" + lista[i].getBetumeret + "\", \"" + lista[i].getSzovegszin + "\", \"" + lista[i].getHatterszin + "\")' id='kedvenc_lista_" + i + "'>Használ</button>";
+        kedvencek_kiir.innerHTML += "<ul class='list-group'>";
+            kedvencek_kiir.innerHTML += "<li class='list-group-item'>" + lista[i].getMintaszoveg + "</li>";
+            kedvencek_kiir.innerHTML += "<li class='list-group-item'>" + lista[i].getBetumeret + "</li>";
+            kedvencek_kiir.innerHTML += "<li class='list-group-item' style='background-color: " + lista[i].getSzovegszin + ";'></li>";
+            kedvencek_kiir.innerHTML += "<li class='list-group-item' style='background-color: " + lista[i].getHatterszin + ";'></li>";
+            kedvencek_kiir.innerHTML += "<button class='btn btn-primary w-100 mt-1 mb-3' onclick='hasznal(\"" + lista[i].getMintaszoveg + "\", \"" + lista[i].getBetumeret + "\", \"" + lista[i].getSzovegszin + "\", \"" + lista[i].getHatterszin + "\")' id='kedvenc_lista_" + i + "'>Használ</button>";
         kedvencek_kiir.innerHTML += "</ul>";
     }
 }
