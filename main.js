@@ -43,7 +43,36 @@ function alaphelyzet() {
 }
 
 function kedvencekhezHozzaadas() {
-    
+    let k1 = new Kedvencek(document.getElementById("mintaszoveg").value, 
+        document.getElementById("betumeret").value, 
+        document.getElementById("szovegszin").value, 
+        document.getElementById("hatterszin").value
+    );
+
+    let lista = [];
+    lista.push(k1);
+
+    let kedvencek_kiir = document.getElementById("kedvencek_kiir");
+    for (let i = 0; i < lista.length; i++) {
+        kedvencek_kiir.innerHTML += "<ul>";
+            kedvencek_kiir.innerHTML += "<li>" + lista[i].getMintaszoveg + "</li>";
+            kedvencek_kiir.innerHTML += "<li>" + lista[i].getBetumeret + "</li>";
+            kedvencek_kiir.innerHTML += "<li>" + lista[i].getSzovegszin + "</li>";
+            kedvencek_kiir.innerHTML += "<li>" + lista[i].getHatterszin + "</li>";
+            kedvencek_kiir.innerHTML += "<button onclick='hasznal(\"" + lista[i].getMintaszoveg + "\", \"" + lista[i].getBetumeret + "\", \"" + lista[i].getSzovegszin + "\", \"" + lista[i].getHatterszin + "\")' id='kedvenc_lista_" + i + "'>Használ</button>";
+        kedvencek_kiir.innerHTML += "</ul>";
+    }
+}
+
+function hasznal(getMintaszoveg, getBetumeret, getSzovegszin, getHatterszin) {
+    document.getElementById("mintaszoveg").value = getMintaszoveg;
+    document.getElementById("betumeret").value = getBetumeret;
+    document.getElementById("szovegszin").value = getSzovegszin;
+    document.getElementById("hatterszin").value = getHatterszin;
+    mintaszoveg();
+    betumeret();
+    szovegszin();
+    hatterszin();
 }
 
 function init() {
