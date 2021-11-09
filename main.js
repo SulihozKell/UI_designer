@@ -42,6 +42,10 @@ function alaphelyzet() {
     hatterszin();
 }
 
+function kedvencekhezHozzaadas() {
+    
+}
+
 function init() {
     alaphelyzet();
     document.getElementById("mintaszoveg").addEventListener("input", mintaszoveg);
@@ -49,6 +53,7 @@ function init() {
     document.getElementById("szovegszin").addEventListener("input", szovegszin);
     document.getElementById("hatterszin").addEventListener("input", hatterszin);
     document.getElementById("alaphelyzet").addEventListener("click", alaphelyzet);
+    document.getElementById("kedvencekhez_hozzaadas").addEventListener("click", kedvencekhezHozzaadas);
 }
 
 document.addEventListener("DOMContentLoaded", init);
